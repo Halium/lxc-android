@@ -1,4 +1,4 @@
-IMPORT{program}="androidboot.hardware"
+IMPORT{cmdline}="androidboot.hardware"
 
 ENV{androidboot.hardware}!="hammerhead", GOTO="hammerhead_inc_end"
 
