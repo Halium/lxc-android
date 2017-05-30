@@ -1,0 +1,10 @@
+[Unit]
+Description=mount android parts
+After=system.mount
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/lxc-android/mount-android
+
+[Install]
+RequiredBy=local-fs.target
