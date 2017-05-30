@@ -1,0 +1,10 @@
+[Unit]
+Description=mount system.img
+
+[Mount]
+What=/data/system.img
+Where=/system
+Options=ro
+
+[Install]
+RequiredBy=local-fs.target
