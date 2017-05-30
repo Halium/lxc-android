@@ -1,0 +1,18 @@
+lxc.rootfs = /var/lib/lxc/android/rootfs
+lxc.utsname = armhf
+
+lxc.network.type = none
+
+lxc.devttydir = lxc
+lxc.tty = 4
+lxc.pts = 1024
+lxc.arch = armhf
+lxc.cap.drop = mac_admin mac_override
+lxc.pivotdir = lxc_putold
+
+lxc.hook.pre-start = /var/lib/lxc/android/pre-start.sh
+
+lxc.init_cmd = /init
+
+lxc.aa_profile = unconfined
+lxc.autodev = 0

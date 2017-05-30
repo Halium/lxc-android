@@ -1,0 +1,15 @@
+[Unit]
+Description=adbd
+Wants=local-fs.target
+After=local-fs.target lxc@android.service systemd-udevd.service
+
+[Service]
+Type=simple
+Restart=on-failure
+SuccessExitStatus=0 127
+ExecStartPre=/usr/lib/android-tools-adbd/pre-start
+ExecStart=/usr/bin/adbd
+ExecStopPost=/usr/bin/unlink /dev/socket/adbd
+
+[Install]
+WantedBy=multi-user.target

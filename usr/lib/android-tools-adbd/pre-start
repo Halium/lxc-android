@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ -d /sys/class/android_usb ]; then
+    if [ -d /sys/class/android_usb/android0/f_ffs ] && [ -n "$(cat /sys/class/android_usb/android0/f_ffs/aliases)" ]; then
+        if ! $(mount|grep -q ^adb); then
+        # some devices use the functionfs (i.e. manta)
+        # we need to mount it to keep adb working
+        mkdir -p /dev/usb-ffs/adb
+        mount -t functionfs adb /dev/usb-ffs/adb || true
+        fi
+    fi
+fi
+
+echo 0 >/sys/class/android_usb/android0/enable
+echo -n 18d1 >/sys/class/android_usb/android0/idVendor
+echo -n D002 >/sys/class/android_usb/android0/idProduct
+echo -n adb >/sys/class/android_usb/android0/functions
+echo 1 >/sys/class/android_usb/android0/enable

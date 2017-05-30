@@ -1,0 +1,3 @@
+# udisks2 hint for devices to be marked as system devices (consumed by ciborium)
+# mmcblk0 so far has always been system.
+ACTION=="add|change", KERNEL=="mmcblk0*", ENV{UDISKS_SYSTEM}="1"

@@ -1,0 +1,26 @@
+# logging devices
+ACTION=="add", KERNEL=="log_*", MODE="0666"
+ACTION=="add", KERNEL=="log_main", SYMLINK+="alog/main"
+ACTION=="add", KERNEL=="log_system", SYMLINK+="alog/system"
+ACTION=="add", KERNEL=="log_radio", SYMLINK+="alog/radio"
+ACTION=="add", KERNEL=="log_events", SYMLINK+="alog/events"
+
+# system devices
+ACTION=="add", KERNEL=="binder", MODE="0666"
+
+# graphics devices
+SUBSYSTEM=="graphics", KERNEL=="*", SYMLINK+="graphics/%k"
+
+# input devices
+ACTION=="add", KERNEL=="event[0-9]*", GROUP="android_input", MODE="0660"
+
+# misc devices
+ACTION=="add", KERNEL=="alarm", OWNER="system", GROUP="phablet", MODE="0660"
+ACTION=="add", KERNEL=="uhid", OWNER="system", GROUP="system", MODE="0660"
+ACTION=="add", KERNEL=="mtp_usb", OWNER="root", GROUP="plugdev", MODE="0660"
+
+# memory
+ACTION=="add", KERNEL=="ashmem", OWNER="system", GROUP="system", MODE="0666"
+
+# rfkill
+ACTION=="add", KERNEL=="rfkill", GROUP="android_input", MODE="0660"
