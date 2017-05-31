@@ -1,0 +1,58 @@
+ACTION=="add", KERNEL=="mali0", OWNER="system", GROUP="system", MODE="0666"
+ACTION=="add", KERNEL=="ump", OWNER="system", GROUP="system", MODE="0666"
+ACTION=="add", KERNEL=="ion", OWNER="system", GROUP="system", MODE="0666"
+ACTION=="add", KERNEL=="video6", OWNER="video", GROUP="video", MODE="0660"
+ACTION=="add", KERNEL=="video7", OWNER="video", GROUP="video", MODE="0660"
+ACTION=="add", KERNEL=="iio:device*", OWNER="system", GROUP="system", MODE="0660"
+
+# gscalers
+ACTION=="add", KERNEL=="video23", OWNER="video", GROUP="video", MODE="0660"
+ACTION=="add", KERNEL=="video26", OWNER="video", GROUP="video", MODE="0660"
+ACTION=="add", KERNEL=="video29", OWNER="video", GROUP="video", MODE="0660"
+ACTION=="add", KERNEL=="video32", OWNER="video", GROUP="video", MODE="0660"
+
+ACTION=="add", KERNEL=="video24", OWNER="video", GROUP="video", MODE="0660"
+ACTION=="add", KERNEL=="video27", OWNER="video", GROUP="video", MODE="0660"
+ACTION=="add", KERNEL=="video30", OWNER="video", GROUP="video", MODE="0660"
+ACTION=="add", KERNEL=="video33", OWNER="video", GROUP="video", MODE="0660"
+
+ACTION=="add", KERNEL=="video34", OWNER="system", GROUP="system", MODE="0660"
+ACTION=="add", KERNEL=="v4l-subdev*", OWNER="system", GROUP="system", MODE="0666"
+ACTION=="add", KERNEL=="media0", OWNER="system", GROUP="system", MODE="0660"
+ACTION=="add", KERNEL=="media1", OWNER="system", GROUP="system", MODE="0660"
+
+# camera
+ACTION=="add", KERNEL=="video40", OWNER="video", GROUP="video", MODE="0660"
+ACTION=="add", KERNEL=="video41", OWNER="video", GROUP="video", MODE="0660"
+ACTION=="add", KERNEL=="video42", OWNER="video", GROUP="video", MODE="0660"
+ACTION=="add", KERNEL=="video43", OWNER="video", GROUP="video", MODE="0660"
+ACTION=="add", KERNEL=="video44", OWNER="video", GROUP="video", MODE="0660"
+ACTION=="add", KERNEL=="media2", OWNER="video", GROUP="video", MODE="0660"
+
+# mixer
+ACTION=="add", KERNEL=="video16", OWNER="system", GROUP="audio", MODE="0660"
+ACTION=="add", KERNEL=="video17", OWNER="system", GROUP="system", MODE="0666"
+ACTION=="add", KERNEL=="video18", OWNER="system", GROUP="system", MODE="0666"
+ACTION=="add", KERNEL=="video19", OWNER="system", GROUP="system", MODE="0666"
+
+# BT
+ACTION=="add", KERNEL=="ttySAC0", OWNER="bluetooth", GROUP="bluetooth", MODE="0660"
+
+# GPS
+ACTION=="add", KERNEL=="ttySAC1", OWNER="root", GROUP="system", MODE="0666"
+
+# NFC
+ACTION=="add", KERNEL=="bcm2079x", OWNER="nfc", GROUP="nfc", MODE="0660"
+
+# JPEG
+ACTION=="add", KERNEL=="video12", OWNER="video", GROUP="video", MODE="0660"
+
+# mobicore DRM
+ACTION=="add", KERNEL=="mobicore", OWNER="video", GROUP="video", MODE="0600"
+ACTION=="add", KERNEL=="mobicore-user", OWNER="drm", GROUP="video", MODE="0660"
+
+# secure mem driver
+ACTION=="add", KERNEL=="s5p-smem", OWNER="drm", GROUP="video", MODE="0660"
+
+# G2D
+ACTION=="add", KERNEL=="fimg2d", OWNER="video", GROUP="video", MODE="0660"

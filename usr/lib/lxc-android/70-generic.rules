@@ -1,0 +1,4 @@
+# Rules for goldfish qemu emulator
+ACTION=="add", KERNEL=="qemu_trace", OWNER="system", GROUP="system", MODE="0666"
+ACTION=="add", KERNEL=="qemu_pipe", OWNER="system", GROUP="system", MODE="0666"
+ACTION=="add", KERNEL=="ttyS*", OWNER="system", GROUP="system", MODE="0666"

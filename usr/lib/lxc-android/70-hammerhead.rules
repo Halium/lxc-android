@@ -1,7 +1,3 @@
-IMPORT{cmdline}="androidboot.hardware"
-
-ENV{androidboot.hardware}!="hammerhead", GOTO="hammerhead_inc_end"
-
 ACTION=="add", KERNEL=="genlock", OWNER="system", GROUP="system", MODE="0666"
 ACTION=="add", KERNEL=="kgsl", OWNER="system", GROUP="system", MODE="0666"
 ACTION=="add", KERNEL=="kgsl-3d0", OWNER="system", GROUP="system", MODE="0666"
@@ -44,5 +40,3 @@ ACTION=="add", KERNEL=="jpeg0", OWNER="system", GROUP="video", MODE="0660"
 ACTION=="add", KERNEL=="jpeg1", OWNER="system", GROUP="video", MODE="0660"
 ACTION=="add", KERNEL=="jpeg2", OWNER="system", GROUP="video", MODE="0660"
 ACTION=="add", KERNEL=="ttyHS99", OWNER="bluetooth", GROUP="bluetooth", MODE="0660"
-
-LABEL="hammerhead_inc_end"
