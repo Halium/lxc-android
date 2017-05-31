@@ -34,3 +34,6 @@ cat ${fstab} | while read line; do
     mount $path $2 -t $3 -o $4
 
 done
+
+# check if vendor is mounted/created? otherwise link it to system
+[ -e "/vendor" ] || ln -s /system/vendor /vendor
