@@ -39,7 +39,5 @@ mount_android_partitions $LXC_ROOTFS_PATH/fstab* "$LXC_ROOTFS_PATH"
 sed -i '/on early-init/a \    mkdir /dev/socket\n\    mount none /socket /dev/socket bind' $LXC_ROOTFS_PATH/init.rc
 
 sed -i "/mount_all /d" $LXC_ROOTFS_PATH/init.*.rc
+sed -i "/swapon_all /d" $LXC_ROOTFS_PATH/init.*.rc
 sed -i "/on nonencrypted/d" $LXC_ROOTFS_PATH/init.rc
-
-rm -Rf $LXC_ROOTFS_PATH/vendor
-ln -s /system/vendor $LXC_ROOTFS_PATH/vendor
