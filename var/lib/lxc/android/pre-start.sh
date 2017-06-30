@@ -33,6 +33,8 @@ mount -n -o bind,rw /dev/socket $LXC_ROOTFS_PATH/socket
 
 rm $LXC_ROOTFS_PATH/sbin/adbd
 
+rm -Rf $LXC_ROOTFS_PATH/vendor
+
 # Mount the android partitions
 mount_android_partitions $LXC_ROOTFS_PATH/fstab* "$LXC_ROOTFS_PATH"
 
