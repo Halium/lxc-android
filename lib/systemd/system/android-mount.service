@@ -1,6 +1,7 @@
 [Unit]
 Description=mount android parts
-After=system.mount
+After=system.mount systemd-udev-settle.service
+Wants=systemd-udev-settle.service
 
 [Service]
 Type=oneshot
