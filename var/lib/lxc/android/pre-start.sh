@@ -16,6 +16,12 @@ mount_android_partitions() {
 	done
 }
 
+if [ -f "/tmp/lxc_android_once" ]; then
+    echo "lxc:android contianer had already been invoked.";
+    exit -255
+fi
+touch /tmp/lxc_android_once
+
 INITRD=/system/boot/android-ramdisk.img
 rm -Rf $LXC_ROOTFS_PATH
 mkdir -p $LXC_ROOTFS_PATH
