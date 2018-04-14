@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Copies files from /var/lib/lxc/android/overrides, which can be provided (for
+# example) by the Android image's overlay, the distribution maintainer, or
+# the device vendor, into the rootfs.
+
+cp -a /var/lib/lxc/android/overrides/* $LXC_ROOTFS_PATH || true

@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# if device have /system partition have udev rules, use it
-device=$(grep ^ro.product.device= /system/build.prop |sed -e 's/.*=//')
-[ -e /lib/udev/rules.d/70-$device.rules ] || \
-    cp /usr/lib/lxc-android/70-$device.rules /lib/udev/rules.d/
