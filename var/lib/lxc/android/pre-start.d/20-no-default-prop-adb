@@ -1,0 +1,6 @@
+#! /bin/sh
+
+# Avoid changing the the property when running on the emulator
+if ! grep -q "qemu=1" /proc/cmdline; then
+	sed -i '/^persist.sys.usb.config=.*/d' $LXC_ROOTFS_PATH/default.prop || true
+fi
