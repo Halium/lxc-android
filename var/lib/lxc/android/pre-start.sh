@@ -46,6 +46,12 @@ mount_android_partitions $LXC_ROOTFS_PATH/fstab* "$LXC_ROOTFS_PATH"
 
 sed -i '/on early-init/a \    mkdir /dev/socket\n\    mount none /socket /dev/socket bind' $LXC_ROOTFS_PATH/init.rc
 
+# Disable configfs mount for devices with a dedicated config partition
+if grep -q "/config" $LXC_ROOTFS_PATH/fstab*
+then
+sed -i 's@mount configfs none /config@@' $LXC_ROOTFS_PATH/init.rc
+fi
+
 sed -i "/mount_all /d" $LXC_ROOTFS_PATH/init.*.rc
 sed -i "/swapon_all /d" $LXC_ROOTFS_PATH/init.*.rc
 sed -i "/on nonencrypted/d" $LXC_ROOTFS_PATH/init.rc
