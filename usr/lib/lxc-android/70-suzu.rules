@@ -180,3 +180,4 @@ ACTION=="add", KERNEL=="ttyHS0", OWNER="bluetooth", GROUP="bluetooth", MODE="066
 ACTION=="add", KERNEL=="ttyMSM0", OWNER="bluetooth", GROUP="bluetooth", MODE="0660"
 ACTION=="add", KERNEL=="fingerprint", OWNER="system", GROUP="input", MODE="0664"
 ACTION=="add", KERNEL=="pn54x", OWNER="nfc", GROUP="nfc", MODE="0660"
+ACTION=="add", KERNEL=="input[0-9]*", SUBSYSTEM=="input", ENV{ID_INPUT}=="1", ATTRS{name}=="clearpad", ENV{ID_INPUT_TOUCHSCREEN}="1"
