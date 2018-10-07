@@ -11,6 +11,12 @@ for mountpoint in /android/*; do
 	mount --bind $mountpoint $desired_mount
 done
 
+if [ -f "/tmp/lxc_android_once" ]; then
+    echo "lxc:android contianer had already been invoked.";
+    exit -255
+fi
+touch /tmp/lxc_android_once
+
 mknod -m 666 $LXC_ROOTFS_PATH/dev/null c 1 3
 
 # Create /dev/pts if missing
