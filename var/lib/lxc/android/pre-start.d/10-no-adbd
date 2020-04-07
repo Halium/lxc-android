@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Disable adbd
+rm $LXC_ROOTFS_PATH/sbin/adbd
