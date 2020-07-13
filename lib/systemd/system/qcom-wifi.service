@@ -1,0 +1,12 @@
+[Unit]
+Wants=local-fs.target
+After=local-fs.target
+Description=Qualcomm WiFi setup
+ConditionPathExists=/dev/wcnss_wlan
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'echo 1 > /dev/wcnss_wlan || echo sta > /sys/module/wlan/parameters/fwpath || echo No wifi detected.'
+
+[Install]
+WantedBy=multi-user.target
