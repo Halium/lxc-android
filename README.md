@@ -1,7 +1,3 @@
-# lxc-android
-Configuration for starting android inside LXC container
-
-
 # On the host:
 
 Alternatively, if you want to create the file with the udev rules on your “host” machine you can run the following command inside your halium folder, replacing [codename] with your device’s codename:
